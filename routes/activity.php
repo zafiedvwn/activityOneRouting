@@ -23,17 +23,15 @@ Route::get('/activityGet', function () {
     return "http verb GET";
 });
 
-Route::get('/getIt', [UserController::class, 'index']);
-
 Route::post('/postIt', [UserController::class, 'index']);
 
-Route::put('/putIt', [UserController::class, 'index']);
+Route::put('/putIt', [UserController::class, 'update']);
 
-Route::patch('/patchIt', [UserController::class, 'index']);
+Route::patch('/patchIt', [UserController::class, 'update']);
 
-Route::delete('/deleteIt', [UserController::class, 'index']);
+Route::delete('/deleteIt', [UserController::class, 'destroy']);
 
-Route::options('/optionIt', [UserController::class, 'index']);
+// Route::options('/optionIt', [UserController::class, 'index']);
 
 Route::match(['get', 'post', 'put', 'patch', 'delete', 'options'], '/allOfIt', function () {
     return "It matches it all.";
